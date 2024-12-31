@@ -9,13 +9,23 @@ $request = str_replace('/EDGE-RUET-CSE-RUETCSEB0106/15.Module/1.Project01', '', 
 // Match the requested path
 switch ($request) {
     case '/home':
+
         echo "<h1>Welcome to the Home page!</h1>";
+
         break;
     case '/about':
-        echo "Welcome to the About page!";
+       // echo "Welcome to the About page!";
+
+       include"views/about.php";
+
+
         break;
     case '/':
-        echo "Welcome to the Default Home page!";
+        // echo "Welcome to the Default Home page!";
+
+        include"views/home.php";
+
+    
         break;
     case "/page1":
         include"page1.php";
