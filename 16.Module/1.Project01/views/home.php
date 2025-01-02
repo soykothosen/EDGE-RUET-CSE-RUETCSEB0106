@@ -274,6 +274,37 @@
         <img src="views/images/plug.png" alt="">
       </div>
       <div class="row">
+
+      <?php 
+
+              $total_blog = count($outputblog);
+
+              #echo $total_blog;
+
+              for($i=0;$i<$total_blog;$i++){
+
+                echo '<div class="col-md-6">
+          <div class="box">
+            <div class="img-box">
+              <img src="'
+                . $outputblog[$i]['image_Url'].'" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>'. $outputblog[$i]['title'].
+               
+              '</h5>
+
+              <p>'
+                . $outputblog[$i]['description'].'</p>
+            </div>
+          </div>
+        </div>';
+
+
+              }
+              
+              
+              ?>
         <div class="col-md-6">
           <div class="box">
             <div class="img-box">
@@ -283,6 +314,7 @@
               <h5>
                 Blog Title Goes Here
               </h5>
+
               <p>
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised
               </p>
