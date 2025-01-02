@@ -32,6 +32,14 @@ switch ($request) {
 
     $output = $result->fetch_all(MYSQLI_ASSOC);
 
+    // fatch all blog Content
+
+    $sqlblog = "SELECT * FROM `blog`";
+        
+    $resultblog = $conn->query($sqlblog);
+
+    $outputblog = $resultblog->fetch_all(MYSQLI_ASSOC);
+
     #print_r($output);
 
     #print_r($output[0]['Hero_title']);
