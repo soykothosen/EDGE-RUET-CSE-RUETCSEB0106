@@ -1,0 +1,16 @@
+User (id, Name, Email. Address, Pass)
+Product (id,Name,Details,Cat_id, Price)
+Product Cat(id, name)
+order(id, user id, product id)
+
+View all User
+
+View All Product (Join product cat)
+
+view all order (Join user table, product)
+
+insert product
+
+update product
+
+delete product
