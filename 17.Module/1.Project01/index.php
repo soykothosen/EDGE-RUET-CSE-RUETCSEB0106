@@ -67,12 +67,24 @@ switch ($request) {
         $password = $_POST['password'];
         $address = $_POST['address'];
 
-        echo " Name:".$name;
-        echo " Mobile:".$mobile;
-        echo " Password:".$password;
-        echo " Address:".$address;
-    
-        
+        // echo " Name:".$name;
+        // echo " Mobile:".$mobile;
+        // echo " Password:".$password;
+        // echo " Address:".$address;
+
+        $sql = "INSERT INTO `user` (`id`, `name`, `mobile_num`, `password`, `Address`) VALUES (NULL, '$name', '$mobile', '$password', '$address');";
+        $result = $conn->query($sql);
+
+        if ($result === false) {
+
+            echo "Error executing query: " . $conn->error;  // Print the error message
+
+    } else {
+
+     echo "Success Insert Query";
+
+    }
+
         break;
 
 
