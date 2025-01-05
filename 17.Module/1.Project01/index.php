@@ -7,6 +7,8 @@ $request = $_SERVER['REQUEST_URI'];
 // Remove the project folder name from the URI (if applicable)
 $request = str_replace('/EDGE-RUET-CSE-RUETCSEB0106/17.Module/1.Project01', '', $request);
 
+$Base_Url = '/EDGE-RUET-CSE-RUETCSEB0106/17.Module/1.Project01';
+
 // Match the requested path
 switch ($request) {
     case '/home':
@@ -59,6 +61,11 @@ switch ($request) {
     case "/registration":
         include"views/registration.php";
         break;
+
+    case "/login":
+        include"views/login.php";
+        break;
+
     case "/creatuser":
 
         // Get form data
@@ -81,11 +88,40 @@ switch ($request) {
 
     } else {
 
-     echo "Success Insert Query";
+     #echo "Success Insert Query";
+     header("Location:".$Base_Url."/login");
 
     }
 
         break;
+
+    
+    case "/logincheck":
+
+        
+        $mobile = $_POST['mobile'];
+        $password = $_POST['password'];
+
+        
+    $sql = "SELECT * FROM `user` WHERE mobile_num = '$mobile' AND password = '$password';";
+        
+    $result = $conn->query($sql);
+
+    $output = $result->fetch_all(MYSQLI_ASSOC);
+
+    print_r($output);
+
+    #print_r($output[0]['Hero_title']);
+
+    #echo json_encode($output);
+
+
+        
+
+        
+        break;
+
+
 
 
     case "/page2":
